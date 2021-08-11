@@ -33,7 +33,11 @@ addOne(1) //=> 2
 addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
-
+const addOne = (num) => {
+  if (!isNaN(num)) {
+    return num + 1;
+  }
+}
 
 
 
@@ -56,7 +60,12 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
-
+const addTwoNumbers = (num1, num2) => {
+  if (!isNaN(num1) && !isNaN(num2)) {
+    return num1 + num2;
+  }
+  return NaN;
+}
 
 
 
@@ -79,7 +88,13 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
-
+const sumNumbers = (numArr) => {
+  if (numArr.length) {
+    const sum = numArr.reduce((a,b) => a + b, 0);
+    return sum;
+  }
+  return 0;
+}
 
 
 
@@ -103,6 +118,15 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+// Arrow functions do not have access to arguments keyword
+function addList(){
+  let sum = 0;
+
+  let numArr = Array.from(arguments);
+  sum = numArr.reduce((a,b) => a + b, 0);
+
+  return sum;
+}
 
 
 
@@ -117,7 +141,7 @@ Prompt:
 - Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
 - The first argument should be the dividend and the second argument should be the divisor.
 - If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
-- For extra fun, complete this challenge without using the modulus (%) operator.
+- DO NOT USE THE MODULUS (%) OPERATOR.
 
 Examples:
 
@@ -126,7 +150,11 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
+const computeRemainder = (num1, num2) => {
+  if (num2 === 0) return Infinity;
 
+  return num1 - (Math.floor(num1 / num2) * num2); 
+};
 
 
 
