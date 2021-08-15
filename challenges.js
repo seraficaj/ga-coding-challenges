@@ -239,6 +239,14 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+const removeEnds = (str) => {
+  if (str.length < 3) {
+    return '';
+  }
+
+  let removedEnds = str.slice(1, -1);
+  return removedEnds;
+}
 
 
 
@@ -262,7 +270,20 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+const charCount = (str) => {
+  const hashMap = {};
 
+  let charArray = str.split('');
+
+  charArray.forEach(letter => {
+    if (!hashMap[letter]) {
+      hashMap[letter] = 0;
+    } 
+    hashMap[letter] += 1
+  });
+
+  return hashMap;
+}
 
 
 
