@@ -309,6 +309,14 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+const formatWithPadding = (int, str, paddedLength) => {
+  
+  if (int.toString().length >= paddedLength) {
+    return int.toString();
+  }
+  let padded = str.repeat(paddedLength - int.toString().length) + int.toString();
+  return padded;
+}
 
 
 
