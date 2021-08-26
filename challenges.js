@@ -455,7 +455,18 @@ fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
 fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
+const fromPairs = (arr) => {
+  let myObj = {};
 
+  arr.forEach((pair) => {
+    if (!myObj[pair[0]]) {
+      myObj[pair[0]] = pair[1]
+    }
+    myObj[pair[0]] = pair[1];
+  });
+
+  return myObj;
+}
 
 
 
