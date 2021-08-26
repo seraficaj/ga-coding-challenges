@@ -346,8 +346,7 @@ const isPalindrome = (str) => {
 
   if (str.length === 0 || str.length === 1) return true;
   let base =  str.split(" ").join("").toLowerCase();
-  let pal = str.split('').reverse().join('').split(' ').join('').toLowerCase();
-  console.log(base, pal);
+  let pal = str.split('').reverse().join('').split(' ').join('').toLowerCase(); 
   if (
     base
     ===
@@ -420,7 +419,22 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-
+const mumble = (str) => {
+  let value = '';
+  
+  str = str.split("");
+  console.log(str);
+  str.forEach((letter, idx) => {
+    let addMe = letter.repeat(idx + 1);
+    if (idx < str.length - 1 ) {
+      value = value + `${addMe}-`;
+    } else {
+      value += `${addMe}`;
+    }
+  });
+  console.log(value);
+  return value;
+}
 
 
 
