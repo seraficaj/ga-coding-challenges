@@ -489,7 +489,14 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
-
+const mergeObjects = (obj1, ...objects) => {
+  objects.forEach(obj => {
+    (Object.keys(obj)).forEach(key => {
+      obj1[key] = obj[key];
+    });
+  });
+  return obj1;
+}
 
 
 
