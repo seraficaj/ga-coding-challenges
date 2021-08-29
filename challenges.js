@@ -534,7 +534,17 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
-
+const findHighestPriced = (arr) => {
+  let highestPrice = 0;
+  let pos;
+  for (let i=0; i < arr.length; i++) {
+    if (arr[i].price > highestPrice) {
+      highestPrice = arr[i].price;
+      pos = i;
+    }
+  }
+  return arr[pos];
+}
 
 
 
