@@ -575,6 +575,17 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+const mapArray = (arr, callback) => {
+  
+  let newArr = [];
+  
+  arr.forEach((item, idx) => {
+    let newResult = callback(item, idx);
+    newArr.push(newResult);
+  });
+
+  return newArr;
+}
 
 
 
