@@ -624,7 +624,13 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
+const reduceArray = (arr, callback, initialValue) => {
+  let acc = initialValue;
+  arr.forEach( (item, idx) => {
+    acc = callback(acc, item, idx);
+  });
+  return acc;
+}
 
 
 
