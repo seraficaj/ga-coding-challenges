@@ -662,6 +662,20 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 // Your solution for 19-flatten here:
 
 
+const flatten = (arr) => {
+  // flattened array to hold all values
+  let flattened = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flattened.push(...flatten(arr[i]));
+    } else { 
+      flattened.push(arr[i]); 
+    }
+  }
+  return flattened;
+}
+
+
 
 
 
