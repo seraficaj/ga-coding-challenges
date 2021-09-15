@@ -699,7 +699,22 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
+const isPrime = (num) => {
 
+  if (!Number.isInteger(num) || num === 1) {
+    return false;
+  }
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  
+  if (num > 1 === true) {
+    return true;
+  };
+}
 
 
 
