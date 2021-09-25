@@ -390,7 +390,6 @@ const mumble = (str) => {
     let value = "";
 
     str = str.split("");
-    console.log(str);
     str.forEach((letter, idx) => {
         let addMe = letter.repeat(idx + 1);
         if (idx < str.length - 1) {
@@ -399,7 +398,6 @@ const mumble = (str) => {
             value += `${addMe}`;
         }
     });
-    console.log(value);
     return value;
 };
 
