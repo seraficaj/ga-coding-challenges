@@ -723,6 +723,19 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
+const intersection = (arr1,arr2) => {
+    let result = [];
+
+    let dup_arr = [...arr2];
+    arr1.forEach(elem => {
+        let i = dup_arr.indexOf(elem);
+        if (i > -1) {
+            result.push(dup_arr.splice(i, 1)[0])
+        }
+    });
+    return result
+}
+
 /*-----------------------------------------------------------------
 Challenge: 23-balancedBrackets
 
