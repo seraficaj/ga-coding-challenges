@@ -50,3 +50,5 @@ You may choose to do more than one per day, or none at all - just don't fall too
 - Your instructors will be checking your progress from time-to-time. As you solve the challenges, commit your work, and `$ git push origin master`. This pushes the updates to your fork.
 
 
+## Possible Bonuses:
+- redo all problems in Python
